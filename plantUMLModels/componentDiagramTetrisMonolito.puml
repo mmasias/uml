@@ -1,8 +1,32 @@
+@startuml
+
 package "Aplicación Desktop" {
-    component Tetris [
-        TetrisEngine
-        InterfazGrafica
-        GestorAudio
-        PersistenciaLocal
-    ]
+  component tetrisExe [
+    <b>Tetris.exe</b>
+    TetrisEngine
+    InterfazGrafica  
+    GestorAudio
+    PersistenciaLocal
+  ]
+  
+  component configFile [
+    <b>config.ini</b>
+    Configuración usuario
+    Preferencias gráficas
+    Controles personalizados
+  ]
+  
+  component scoresFile [
+    <b>puntuaciones.dat</b>
+    Histórico de partidas
+    Records personales
+    Estadísticas de juego
+  ]
 }
+
+' Dependencias
+tetrisExe ..> configFile : lee
+tetrisExe ..> scoresFile : actualiza
+tetrisExe --> scoresFile : persiste
+
+@enduml
