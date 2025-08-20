@@ -1,0 +1,8 @@
+package "Aplicación Desktop" {
+    component Tetris [
+        TetrisEngine
+        InterfazGrafica
+        GestorAudio
+        PersistenciaLocal
+    ]
+}

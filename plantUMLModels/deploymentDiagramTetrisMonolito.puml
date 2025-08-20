@@ -1,0 +1,8 @@
+node "PC Usuario" {
+  node "Windows 10" {
+    artifact "Tetris.exe"
+    artifact "config.ini" 
+    artifact "puntuaciones.dat"
+    artifact "DirectX Runtime"
+  }
+}

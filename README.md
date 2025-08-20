@@ -73,6 +73,7 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 |Artefactos desplegables: .jar, .dll, .exe, servicios, módulos|Nodos físicos: servidores, dispositivos, procesadores
 |Dependencias, interfaces provides/requires|Comunicación física, protocolos de red
 |![](/images/plantUMLModels/componentDiagramTetris.svg)|![](/images/plantUMLModels/deploymentDiagramTetris.svg)
+|![](/images/plantUMLModels/componentDiagramTetrisMonolito.svg)|![](/images/plantUMLModels/deploymentDiagramTetrisMonolito.svg)
 
 
 </div>
