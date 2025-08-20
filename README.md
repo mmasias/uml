@@ -22,10 +22,24 @@ Este estándar fue propuesto originalmente por la metodología RUP (Rational Uni
 
 ## ¿Para qué?
 
-UML resuelve directamente los problemas de ambigüedad comunicativa al establecer un marco de referencia común para todos los participantes en un proyecto de software. La consistencia temporal se logra porque cualquier persona que entienda UML puede interpretar correctamente un diagrama meses o años después de su creación, independientemente de quién lo haya diseñado originalmente.
+UML resuelve directamente cada uno de los problemas de ambigüedad comunicativa identificados:
 
-La comunicación entre diferentes personas se vuelve precisa y confiable, ya que el estándar elimina las interpretaciones subjetivas. Cuando un diagrama UML representa una arquitectura de sistema, todos los desarrolladores, analistas e involucrados extraen la misma información técnica, lo que reduce significativamente los malentendidos y conflictos de implementación.
+|Frente a...|UML...|
+|-|-|
+|**Inconsistencia temporal**|Garantiza que la misma persona pueda interpretar correctamente sus propios diagramas meses o años después, ya que los símbolos y reglas mantienen significados constantes independientemente del tiempo transcurrido. Los garabatos en servilletas se reemplazan por notaciones formales que preservan las decisiones de diseño de manera recuperable.
+|**Falta de consenso interpretativo**|Elimina las interpretaciones subjetivas entre diferentes personas. Cuando un diagrama UML representa una arquitectura de sistema, todos los desarrolladores, analistas e involucrados extraen exactamente la misma información técnica, eliminando las implementaciones divergentes y conflictos de integración que surgen de documentación ambigua.
+|**Ausencia de vocabulario común**|Proporciona precisamente ese vocabulario estandarizado y reglas de representación que convierten la documentación técnica en una herramienta de clarificación efectiva, especialmente crítica en proyectos complejos.
 
 Este lenguaje permite crear propuestas claras y documentación precisa para requisitos y arquitectura de software, funcionando como los planos estandarizados en la construcción civil. UML puede describir tanto conceptos abstractos (como procesos de negocio y funciones de sistemas), como elementos concretos (incluyendo sentencias de código, esquemas de bases de datos y componentes reutilizables).
 
-La aplicación práctica incluye la comunicación efectiva con clientes no técnicos mediante diagramas comprensibles, la coordinación entre equipos de desarrollo distribuidos, y la integración con herramientas de generación automática de código y documentación. UML funciona como un medio que facilita estos objetivos, no como un fin en sí mismo, estableciendo las bases para procesos de desarrollo más eficientes y productos de mayor calidad.
+La aplicación práctica incluye la comunicación efectiva con clientes no técnicos, la coordinación entre equipos distribuidos, y la integración con herramientas de generación automática de código y documentación. UML funciona como un medio que facilita estos objetivos, estableciendo las bases para procesos de desarrollo más eficientes y productos de mayor calidad.
+
+## ¿Cómo?
+
+<div align=center>
+
+|![](/images/plantUMLModels/umlDiagrams.svg)
+|:-:
+|![*Código fuente*](/plantUMLModels/umlDiagrams.puml)
+
+</div>
