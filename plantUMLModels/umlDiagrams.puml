@@ -4,7 +4,7 @@ skinparam linetype polyline
 
 abstract class Diagrama
 
-package "Estructurales (fotos)" as estructurales {
+package "Estructurales" as estructurales {
   abstract class Estructural {
     // cosas tangibles
     // e intangibles
@@ -39,7 +39,7 @@ package "Estructurales (fotos)" as estructurales {
   class "Estructura\nCompuesta" as EstructuraCompuesta
 }
 
-package "Comportamientos (videos)" as comportamientos {
+package "Comportamientos" as comportamientos {
   abstract class Comportamiento {
     // transformación
     // en el tiempo
