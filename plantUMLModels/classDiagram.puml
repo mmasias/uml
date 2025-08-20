@@ -1,0 +1,47 @@
+together {
+abstract class Padre {
+{abstract} metodoAbstracto()
+}
+class UsadoAferente
+class AgregadoAferente
+class Todo
+}
+
+together {
+class AsociadoAferente
+class Base {
+- atributo privado
+# atributo protegido
++ atributo publico
+{static} atributoEstatico
+- metodoPrivado()
+# metodoProtegido()
++ metodoPublico()
+metodoAbstracto()
+{static} metodoEstatico()
+}
+class AsociadoEferente
+}
+
+together {
+class Parte
+class AgregadoEferente
+class UsadoEferente
+class Hija
+}
+
+Padre <|-down- Base
+Base <|-down- Hija
+
+Todo *-down-> Base : composicion
+Base *-down-> Parte : composicion
+
+AgregadoAferente o-down-> Base : agregacion
+Base o-down-> AgregadoEferente : agregacion
+
+UsadoAferente .down.> Base : uso
+Base .down.> UsadoEferente : uso
+
+AsociadoAferente -right-> Base : asociacion
+Base -right-> AsociadoEferente : asociacion
+@enduml

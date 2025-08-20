@@ -43,3 +43,18 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 |[*Código fuente*](/plantUMLModels/umlDiagrams.puml)
 
 </div>
+
+### Estructurales
+
+<div align=center>
+
+|Objetos|Clases|
+|-|-|
+|"Foto" de entidades de la "realidad"|"Foto" (estática) de clases de entidades de la "realidad"|
+|Instancias concretas en un momento específico|Tipos generales, plantillas o moldes
+|Objetos con valores de atributos|Clases, interfaces, …​
+|Enlaces entre objetos paralelo a las relaciones entre sus clases|Relaciones de herencia, composición, agregación, dependencia, …​
+|![](/images/plantUMLModels/objectDiagram.svg)|![](/images/plantUMLModels/classDiagram.svg)
+|Ejemplos|Ejemplos|
+
+</div>

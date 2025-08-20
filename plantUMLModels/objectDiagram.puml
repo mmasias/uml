@@ -1,0 +1,36 @@
+@startuml
+
+together {
+object ":Todo" as Todo
+object ":AgregadoAferente" as AgregadoAferente
+object ":UsadoAferente" as UsadoAferente
+}
+
+together {
+object ":AsociadoAferente" as AsociadoAferente
+object "loQueDesees:Clase" as Clase {
+- atributoPrivado = 13
+# atributoProtegido = "es primo"
++ atributoPublico = true
+}
+object ":AsociadoEferente" as AsociadoEferente
+}
+
+together {
+object ":Derivada" as Derivada
+object ":Parte" as Parte
+object ":AgregadoEferente" as AgregadoEferente
+object ":UsadoEferente" as UsadoEferente
+}
+
+Todo *-down-> Clase : composicion
+Clase *-down-> Parte : composicion
+
+UsadoAferente .down.> Clase : uso
+AgregadoAferente o-down-> Clase: agregacion
+Clase o-down-> AgregadoEferente: agregacion
+Clase .down.> UsadoEferente : uso
+
+AsociadoAferente -right-> Clase : asociacion
+Clase -right-> AsociadoEferente : asociacion
+@enduml
