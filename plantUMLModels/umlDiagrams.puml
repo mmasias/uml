@@ -2,100 +2,108 @@
 
 skinparam linetype polyline
 
-abstract Diagrama
+abstract class Diagrama
 
-package estructurales as "estructurales (fotos)"{
+package "Estructurales (fotos)" as estructurales {
+  abstract class Estructural {
+    // cosas tangibles
+    // e intangibles
+  }
+  
+  package "Básicos" {
+    class Clases {
+      // descripciones
+    }
+    class Objetos {
+      // concreciones
+      // con estado
+    }
+  }
+  
+  package "Implementación" {
+    class Componentes {
+      // software
+      // desplegable
+    }
+    class Despliegue {
+      // nodo
+      // hardware
+    }
+  }
+  
+  class Paquetes {
+    // agrupación
+    // contextual
+  }
+  
+  class "Estructura\nCompuesta" as EstructuraCompuesta
+}
 
-abstract DiagramaEstructural as "Estructural" {
-// cosas tangibles
-// e intangibles
+package "Comportamientos (videos)" as comportamientos {
+  abstract class Comportamiento {
+    // transformación
+    // en el tiempo
+  }
+  
+  class "Casos de Uso" as CasosUso {
+    // sistema
+    // como unidad
+  }
+  
+  package "Flujo" {
+    class Estados {
+      // secuencia de
+      // estados
+    }
+    class Actividad {
+      // secuencia de
+      // actividades
+    }
+  }
+  
+  abstract class Interacción {
+    // con objeto emisor
+    // y receptor
+  }
+  
+  package "Mensajes" {
+    class Comunicación {
+      // colaboración de
+      // mensajes
+    }
+    class Secuencia {
+      // secuencia
+      // con mensajes
+    }
+  }
+  
+  class "Interacción\nGeneral" as InteraccionGeneral
+  class Tiempo
 }
-package " " as A  {
-class DiagramaClases as "<b>Clases</b>" {
-// descripciones
-}
-class DiagramaObjetos as "<b>Objetos</b>" {
-// concreciones
-// con estado
-}
-}
-package " " as B  {
-class DiagramaComponentes as "<b>Componentes</b>" {
-// software
-// desplegable
-}
-class DiagramaDespliegue as "<b>Despliegue</b>" {
-// nodo
-// hardware
-}
-}
-class DiagramaPaquetes as "<b>Paquetes</b>" {
-// agrupación
-// contextual
-}
-class DiagramaEstructuraCompuesta as "Estructura\nCompuesta"
-}
-package comportamientos as "comportamientos (videos)" {
-abstract class DiagramaComportamiento as "Comportamiento" {
-// transformación
-// en el tiempo
-}
-class DiagramaCasosUso as "<b>Casos de Uso</b>" {
-// sistema
-// como unidad
-}
-package " " as C {
-class DiagramaEstados as "<b>Estados</b>" {
-// secuencia de
-// de estados
-}
-class DiagramaActividad as "<b>Actividad</b>" {
-// secuencia de
-// actividades
-}
-}
-abstract class DiagramaInteraccion as "Interacción" {
-// con objeto emisor
-// y receptor
-}
-package " " as D {
-class DiagramaComunicacion as "<b>Comunicación</b>" {
-// colaboración de
-// mensajes
-}
-class DiagramaSecuencia as "<b>Secuencia</b>" {
-// secuencia
-// con mensajes
-}
-}
-class DiagramaInteraccionGeneral as "Interacción\nGeneral"
-class DiagramaTiempo as "Tiempo"
-}
-Diagrama <|-down- DiagramaEstructural
-Diagrama <|-down- DiagramaComportamiento
-DiagramaEstructural <|-down- DiagramaClases
-DiagramaEstructural <|-down- DiagramaObjetos
-DiagramaClases <|-down- DiagramaComponentes
-DiagramaClases <|-down- DiagramaDespliegue
-DiagramaEstructural <|-down- DiagramaPaquetes
-DiagramaEstructural <|-down---- DiagramaEstructuraCompuesta
-DiagramaClases -[hidden] DiagramaObjetos
-DiagramaComponentes -[hidden] DiagramaDespliegue
-A -[hidden]down-B
-B -[hidden]down-DiagramaPaquetes
 
-DiagramaCasosUso -[hidden]left-C
-DiagramaActividad -[hidden] DiagramaEstados
-DiagramaPaquetes -[hidden]down- DiagramaEstructuraCompuesta
-DiagramaComportamiento <|-down- DiagramaCasosUso
-DiagramaComportamiento <|-down- DiagramaInteraccion
-DiagramaComportamiento <|-down- DiagramaActividad
-DiagramaComportamiento <|-down- DiagramaEstados
-C -[hidden]down-DiagramaInteraccion
-DiagramaInteraccion <|-- DiagramaComunicacion
-DiagramaInteraccion <|-- DiagramaSecuencia
-DiagramaInteraccion <|-- DiagramaInteraccionGeneral
-DiagramaInteraccion <|-- DiagramaTiempo
-D -[hidden]down-DiagramaTiempo
-D -[hidden]down-DiagramaInteraccionGeneral
+Diagrama <|-down- Estructural
+Diagrama <|-down- Comportamiento
+
+Estructural <|-down- Clases
+Estructural <|-down- Objetos
+Clases <|-down- Componentes
+Clases <|-down- Despliegue
+Estructural <|-down--- Paquetes
+Estructural <|-down---- EstructuraCompuesta
+
+Comportamiento <|-down- CasosUso
+Comportamiento <|-down- Estados
+Comportamiento <|-down- Actividad
+Comportamiento <|-down-- Interacción
+
+Interacción <|-down- Comunicación
+Interacción <|-down- Secuencia
+Interacción <|-down-- InteraccionGeneral
+Interacción <|-down-- Tiempo
+
+Clases -[hidden]right- Objetos
+Componentes -[hidden]right- Despliegue
+Estados -[hidden]right- Actividad
+Comunicación -[hidden]right- Secuencia
+
 @enduml

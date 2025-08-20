@@ -40,6 +40,6 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 
 |![](/images/plantUMLModels/umlDiagrams.svg)
 |:-:
-|![*Código fuente*](/plantUMLModels/umlDiagrams.puml)
+|[*Código fuente*](/plantUMLModels/umlDiagrams.puml)
 
 </div>
