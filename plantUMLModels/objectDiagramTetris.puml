@@ -1,0 +1,89 @@
+@startuml
+
+object "partida1:Juego" as juego {
+  puntos = 1500
+  nivel = 3
+  estado = "activo"
+}
+
+object "tablero1:Tablero" as tablero {
+  filas = 20
+  columnas = 10
+  lineasCompletas = 5
+}
+
+object "turno7:Turno" as turno {
+  numero = 7
+  tiempoRestante = 2.3
+}
+
+object "lineaInferior:Linea" as linea1 {
+  numero = 19
+  completa = false
+  celdasOcupadas = 7
+}
+
+object "lineaMedia:Linea" as linea2 {
+  numero = 10
+  completa = false
+  celdasOcupadas = 3
+}
+
+object "piezaActual:Pieza" as pieza {
+  posicionX = 5
+  posicionY = 2
+  rotacion = 90
+  activa = true
+}
+
+object "movimiento3:Movimiento" as movimiento {
+  tipo = "rotacion"
+  valido = true
+  ejecutado = true
+}
+
+object "celda1:Celda" as celda1 {
+  fila = 19
+  columna = 0
+  ocupada = true
+  color = "azul"
+}
+
+object "celda2:Celda" as celda2 {
+  fila = 19
+  columna = 1
+  ocupada = false
+  color = "vacio"
+}
+
+object "celda3:Celda" as celda3 {
+  fila = 10
+  columna = 5
+  ocupada = true
+  color = "rojo"
+}
+
+object "tipoL:TipoPieza" as tipoL {
+  forma = "L"
+  color = "naranja"
+  rotacionesPosibles = 4
+}
+
+' Relaciones entre objetos
+juego --> tablero : "se juega en"
+juego --> turno : "se desarrolla en turnos"
+juego --> pieza : "contiene piezas activas"
+
+tablero --> linea1 : "se organiza en"
+tablero --> linea2 : "se organiza en"
+
+linea1 --> celda1 : "está formado por"
+linea1 --> celda2 : "está formado por"
+linea2 --> celda3 : "está formado por"
+
+turno --> movimiento : "involucra"
+movimiento --> pieza : "permite"
+
+pieza --> tipoL : "es de tipo"
+
+@enduml

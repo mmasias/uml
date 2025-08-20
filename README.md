@@ -55,6 +55,9 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 |Objetos con valores de atributos|Clases, interfaces, …​
 |Enlaces entre objetos paralelo a las relaciones entre sus clases|Relaciones de herencia, composición, agregación, dependencia, …​
 |![](/images/plantUMLModels/objectDiagram.svg)|![](/images/plantUMLModels/classDiagram.svg)
-|Ejemplos|Ejemplos|
+|**Ejemplos**||
+|![](/images/plantUMLModels/objectDiagramTetris.svg)|![](https://github.com/mmasias/pyTetris/blob/main/images/modelosUML/ModeloDominio.svg)
+|![](https://github.com/mmasias/futbol/blob/main/imagenes/modelosUML/estadoInicial.svg)|![](https://github.com/mmasias/futbol/blob/main/imagenes/modelosUML/modeloDelDominio.svg)|
+
 
 </div>
