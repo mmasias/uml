@@ -1,0 +1,84 @@
+@startuml
+
+package "Cliente Web" {
+  component ui [
+    <b>TetrisUI</b>
+    Renderizado visual
+    Manejo de eventos
+    Clases: Tablero, Celda
+  ]
+  
+  component controller [
+    <b>ControladorJuego</b>
+    Lógica cliente
+    Validación local
+    Clases: Movimiento
+  ]
+  
+  component renderer [
+    <b>RenderizadorPiezas</b>
+    Visualización piezas
+    Animaciones
+    Clases: Pieza, TipoPieza
+  ]
+}
+
+package "Servidor Web" {
+  component api [
+    <b>APIRest</b>
+    Endpoints HTTP
+    Serialización JSON
+    Autenticación
+  ]
+  
+  component engine [
+    <b>MotorJuego</b>
+    Lógica central
+    Reglas del juego
+    Clases: Juego, Turno
+  ]
+  
+  component board [
+    <b>GestorTablero</b>
+    Estado del tablero
+    Detección líneas
+    Clases: Tablero, Línea
+  ]
+  
+  component scores [
+    <b>ServicioPuntuaciones</b>
+    Cálculo puntos
+    Rankings
+    Persistencia
+  ]
+}
+
+package "Persistencia" {
+  component db [
+    <b>BaseDatos</b>
+    PostgreSQL
+    Partidas guardadas
+    Puntuaciones
+  ]
+}
+
+' Interfaces provides
+ui ..> controller : usa
+controller ..> renderer : requiere
+ui ..> api : HTTP calls
+
+api ..> engine : delega
+engine ..> board : gestiona
+engine ..> scores : actualiza
+scores ..> db : persiste
+
+' Dependencias entre componentes del cliente
+controller --> renderer : "actualiza visualización"
+ui --> controller : "eventos usuario"
+
+' Comunicación cliente-servidor
+controller --> api : "POST /movimiento"
+ui --> api : "GET /estado"
+scores --> api : "GET /puntuaciones"
+
+@enduml

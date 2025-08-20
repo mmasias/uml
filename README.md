@@ -50,7 +50,7 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 
 |Objetos|Clases|
 |-|-|
-|"Foto" de entidades de la "realidad"|"Foto" (estática) de clases de entidades de la "realidad"|
+|"Foto" de entidades de la "realidad"|"Foto" de clases de entidades de la "realidad"|
 |Instancias concretas en un momento específico|Tipos generales, plantillas o moldes
 |Objetos con valores de atributos|Clases, interfaces, …​
 |Enlaces entre objetos paralelo a las relaciones entre sus clases|Relaciones de herencia, composición, agregación, dependencia, …​
@@ -58,6 +58,21 @@ La aplicación práctica incluye la comunicación efectiva con clientes no técn
 |**Ejemplos**||
 |![](/images/plantUMLModels/objectDiagramTetris.svg)|![](https://github.com/mmasias/pyTetris/blob/main/images/modelosUML/ModeloDominio.svg)
 |![](https://github.com/mmasias/futbol/blob/main/imagenes/modelosUML/estadoInicial.svg)|![](https://github.com/mmasias/futbol/blob/main/imagenes/modelosUML/modeloDelDominio.svg)|
+
+
+</div>
+
+<div align=center>
+
+|Componentes|Despliegue|
+|-|-|
+|"Foto" del software|"Foto" del hardware
+|Arquitectura lógica del sistema|Arquitectura física del sistema
+|Componentes de software|Componentes de hardware
+|Sus enlaces|Sus enlaces
+|Artefactos desplegables: .jar, .dll, .exe, servicios, módulos|Nodos físicos: servidores, dispositivos, procesadores
+|Dependencias, interfaces provides/requires|Comunicación física, protocolos de red
+|![](/images/plantUMLModels/componentDiagramTetris.svg)|![](/images/plantUMLModels/deploymentDiagramTetris.svg)
 
 
 </div>

@@ -1,0 +1,47 @@
+@startuml
+
+node "Dispositivo Usuario" as usernode {
+  node "Navegador Web" as browser {
+    artifact "TetrisUI" as uiArt
+    artifact "ControladorJuego" as controllerArt  
+    artifact "RenderizadorPiezas" as rendererArt
+  }
+}
+
+note bottom of usernode: OS: Windows/macOS/Linux\nRAM: 4GB+\nNavegador: Chrome/Firefox/Safari
+
+node "Servidor Aplicaciones" as appServer {
+  node "Apache Tomcat" as tomcat {
+    artifact "APIRest" as apiArt
+    artifact "MotorJuego" as engineArt
+    artifact "GestorTablero" as boardArt
+    artifact "ServicioPuntuaciones" as scoresArt
+  }
+}
+
+note bottom of  appServer: OS: Ubuntu 22.04 LTS  \nRAM: 8GB\nCPU: 4 cores\nPuerto: 8080
+
+node "Servidor Base Datos" as dbServer {
+  node "PostgreSQL Server" as postgres {
+    artifact "BaseDatos" as dbArt
+  }
+}
+
+note bottom of dbServer: OS: Ubuntu 22.04 LTS\nRAM: 16GB\nAlmacenamiento: SSD 500GB\nPuerto: 5432
+
+node "Servidor CDN" as cdnServer {
+  node "Nginx CDN" as nginx {
+    artifact "Assets Estáticos" as staticFiles
+    artifact "JavaScript Bundle" as jsBundle
+  }
+}
+
+note bottom of cdnServer: OS: Ubuntu 22.04 LTS\nRAM: 4GB  \nAncho banda: 1Gbps\nPuerto: 443
+
+' Conexiones de red
+usernode -[#blue]-> cdnServer : "HTTPS\nDescarga inicial"
+usernode -[#green]-> appServer : "HTTPS/WebSocket\nAPI calls"
+appServer -[#red]-> dbServer : "TCP/IP\nPostgreSQL protocol"
+cdnServer -[#orange]-> appServer : "HTTP\nCache invalidation"
+
+@enduml
