@@ -1,7 +1,5 @@
 @startuml
 
-skinparam linetype polyline
-
 abstract class Diagrama
 
 package "Estructurales" as estructurales {
@@ -86,8 +84,8 @@ Diagrama <|-down- Comportamiento
 
 Estructural <|-down- Clases
 Estructural <|-down- Objetos
-Clases <|-down- Componentes
 Clases <|-down- Despliegue
+Clases <|-down- Componentes
 Estructural <|-down--- Paquetes
 Estructural <|-down---- EstructuraCompuesta
 
